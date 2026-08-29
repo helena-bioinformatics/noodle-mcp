@@ -91,6 +91,7 @@ It covers all six scientific routes plus negative and safety controls.
 - Official Registry: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.helena-bioinformatics%2Fnoodle
 - Citable release: https://doi.org/10.5281/zenodo.22166486
 - Software Heritage archive request: https://archive.softwareheritage.org/api/1/origin/save/2457442/
+- Software Heritage snapshot: https://archive.softwareheritage.org/swh:1:snp:09b8fb7c64de15487e873b4f77e3e4b57abc02fb/
 - Methodology: https://noodle.helena.bio/methodology
 
 ## License and security
