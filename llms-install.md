@@ -22,10 +22,10 @@ tools:
 1. `search_biomedical_literature`
 2. `get_publication_details`
 3. `get_work_details`
-4. `find_related_publications`
-5. `traverse_citation_graph`
-6. `search_semantic_neighbors`
-7. `get_corpus_coverage`
+4. `get_publication_neighborhood`
+5. `get_work_neighborhood`
+6. `get_corpus_summary`
+7. `support_helena`
 
 Run a harmless smoke test such as searching for `BRCA1 homologous recombination`
 with a small result limit. A successful response should contain publication
