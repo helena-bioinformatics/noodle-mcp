@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "noodle": {"url": "https://api.helena.bio/noodle/v1/mcp"}
+  }
+}

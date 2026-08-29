@@ -1,0 +1,13 @@
+interface:
+  display_name: "Noodle Biomedical Literature Discovery"
+  short_description: "Search papers and traverse related biomedical literature"
+  default_prompt: "Use $noodle-biomedical-literature-discovery to find source-linked biomedical publications and traverse their citation or semantic neighborhoods."
+policy:
+  allow_implicit_invocation: true
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "io.github.helena-bioinformatics/noodle"
+      description: "Noodle Biomedical Literature Discovery MCP public read-only endpoint"
+      transport: "streamable_http"
+      url: "https://api.helena.bio/noodle/v1/mcp"

@@ -1,0 +1,24 @@
+{
+  "title": "Noodle Biomedical Literature Discovery MCP",
+  "description": "The official public, read-only Model Context Protocol adapter for biomedical literature search, publication inspection, and bounded citation or semantic graph traversal from Helena Bioinformatics. It accepts public non-sensitive research questions and publication identifiers only.",
+  "upload_type": "software",
+  "creators": [{"name": "Helena Bioinformatics", "affiliation": "Helena Bioinformatics"}],
+  "version": "0.2.0",
+  "publication_date": "2026-08-29",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "biomedical literature search",
+    "publication discovery",
+    "citation graph",
+    "semantic literature graph",
+    "PubMed",
+    "Model Context Protocol",
+    "bioinformatics"
+  ],
+  "related_identifiers": [
+    {"identifier": "https://github.com/helena-bioinformatics/noodle-mcp", "relation": "isIdenticalTo", "resource_type": "software"},
+    {"identifier": "https://noodle.helena.bio", "relation": "isSupplementTo", "resource_type": "other"}
+  ]
+}

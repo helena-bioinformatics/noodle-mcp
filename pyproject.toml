@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noodle-biomedical-literature-discovery-mcp"
+version = "0.2.0"
+description = "Read-only biomedical literature search and graph discovery MCP adapter by Helena Bioinformatics"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Apache-2.0"}
+authors = [{name = "Helena Bioinformatics", email = "contact@helena.bio"}]
+keywords = ["MCP", "biomedical literature", "PubMed", "citation graph", "bioinformatics"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0,<10.0",
+    "ruff>=0.8.0,<1.0",
+    "jsonschema>=4.23.0,<5.0",
+    "PyYAML>=6.0.2,<7.0",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-q", "--strict-markers"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = ["E501"]

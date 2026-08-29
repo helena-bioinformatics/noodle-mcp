@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use Noodle Biomedical Literature Discovery MCP, please cite this
+  software using the metadata below.
+title: Noodle Biomedical Literature Discovery MCP
+type: software
+authors:
+  - name: Helena Bioinformatics
+    website: https://www.helena.bio
+version: 0.2.0
+date-released: 2026-08-29
+url: https://noodle.helena.bio/mcp
+repository-code: https://github.com/helena-bioinformatics/noodle-mcp
+license: Apache-2.0
+keywords:
+  - biomedical literature search
+  - publication discovery
+  - citation graph
+  - semantic literature graph
+  - PubMed
+  - Model Context Protocol
+  - bioinformatics
+abstract: >-
+  Public read-only MCP adapter for source-linked biomedical literature search,
+  publication records, corpus metadata, and bounded citation or semantic graph
+  traversal. The service accepts public non-sensitive questions and identifiers
+  only and does not establish causality, diagnosis, or treatment.

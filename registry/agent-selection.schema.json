@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/helena-bioinformatics/noodle-mcp/blob/main/registry/agent-selection.schema.json",
+  "title": "Agent selection contract for Noodle Biomedical Literature Discovery MCP",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "identity", "selection", "inputScope", "routing", "outcomes", "scientificBoundary"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schemaVersion": {"const": "1"},
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "publisher", "registryName", "endpoint", "task"],
+      "properties": {
+        "title": {"const": "Noodle Biomedical Literature Discovery MCP"},
+        "publisher": {"const": "Helena Bioinformatics"},
+        "registryName": {"const": "io.github.helena-bioinformatics/noodle"},
+        "endpoint": {"const": "https://api.helena.bio/noodle/v1/mcp"},
+        "task": {"minLength": 60, "type": "string"}
+      }
+    },
+    "selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["implicit", "positiveIntents", "exampleRequests", "negativeIntents"],
+      "properties": {
+        "implicit": {"const": true},
+        "positiveIntents": {"items": {"type": "string"}, "minItems": 8, "type": "array", "uniqueItems": true},
+        "exampleRequests": {"items": {"type": "string"}, "minItems": 8, "type": "array", "uniqueItems": true},
+        "negativeIntents": {"items": {"type": "string"}, "minItems": 5, "type": "array", "uniqueItems": true}
+      }
+    },
+    "inputScope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["accepted", "excluded"],
+      "properties": {
+        "accepted": {"items": {"type": "string"}, "minItems": 5, "type": "array", "uniqueItems": true},
+        "excluded": {"items": {"type": "string"}, "minItems": 5, "type": "array", "uniqueItems": true}
+      }
+    },
+    "routing": {
+      "type": "array", "minItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["job", "tool"],
+        "properties": {
+          "job": {"type": "string"},
+          "tool": {"enum": ["search_biomedical_literature", "get_publication_details", "get_work_details", "get_publication_neighborhood", "get_work_neighborhood", "get_corpus_summary"]}
+        }
+      }
+    },
+    "outcomes": {
+      "items": {"enum": ["resolved", "zero_results", "publication_not_found", "work_not_found", "neighborhood_not_found", "invalid_arguments", "upstream_timeout", "upstream_unavailable", "upstream_rate_limited", "invalid_upstream_response", "internal_failure"]},
+      "minItems": 11, "maxItems": 11, "type": "array", "uniqueItems": true
+    },
+    "scientificBoundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["review", "notDiagnosis", "notTreatment", "semanticSimilarityIsEvidence", "neverSend"],
+      "properties": {
+        "review": {"type": "string"},
+        "notDiagnosis": {"const": true},
+        "notTreatment": {"const": true},
+        "semanticSimilarityIsEvidence": {"const": false},
+        "neverSend": {"items": {"type": "string"}, "minItems": 5, "type": "array", "uniqueItems": true}
+      }
+    }
+  }
+}

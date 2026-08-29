@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "service": "Noodle Biomedical Literature Discovery MCP",
+  "registry_name": "io.github.helena-bioinformatics/noodle",
+  "endpoint": "https://api.helena.bio/noodle/v1/mcp",
+  "transport": "streamable-http",
+  "authentication": "none",
+  "tools": ["search_biomedical_literature", "get_publication_details", "get_work_details", "get_publication_neighborhood", "get_work_neighborhood", "get_corpus_summary", "support_helena"],
+  "clients": {
+    "generic": {"url": "https://api.helena.bio/noodle/v1/mcp", "transport": "streamable-http"},
+    "codex": {"mcpServers": {"noodle": {"url": "https://api.helena.bio/noodle/v1/mcp"}}},
+    "chatgpt": {"mode": "custom MCP connector", "url": "https://api.helena.bio/noodle/v1/mcp"},
+    "claude": {"mode": "custom connector", "url": "https://api.helena.bio/noodle/v1/mcp"},
+    "perplexity": {"mode": "custom remote connector", "url": "https://api.helena.bio/noodle/v1/mcp", "authentication": "none"},
+    "gemini_cli": {"command": "gemini mcp add --transport http noodle https://api.helena.bio/noodle/v1/mcp", "url": "https://api.helena.bio/noodle/v1/mcp"},
+    "grok": {"mode": "custom MCP connector", "url": "https://api.helena.bio/noodle/v1/mcp"},
+    "microsoft_copilot_studio": {"mode": "custom connector OpenAPI import", "url": "https://api.helena.bio/noodle/v1/mcp", "definition": "microsoft-copilot-openapi.yaml"},
+    "vscode": {"servers": {"noodle": {"type": "http", "url": "https://api.helena.bio/noodle/v1/mcp"}}},
+    "cursor": {"mcpServers": {"noodle": {"url": "https://api.helena.bio/noodle/v1/mcp"}}},
+    "windsurf": {"mcpServers": {"noodle": {"serverUrl": "https://api.helena.bio/noodle/v1/mcp"}}},
+    "biomni": {"mode": "stdio proxy recipe", "definition": "../../integrations/biomni/mcp_config.yaml", "url": "https://api.helena.bio/noodle/v1/mcp"},
+    "biorouter": {"mode": "reproducible brxt extension", "definition": "../../integrations/biorouter/manifest.json", "url": "https://api.helena.bio/noodle/v1/mcp"}
+  }
+}

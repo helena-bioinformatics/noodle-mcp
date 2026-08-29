@@ -1,0 +1,93 @@
+{
+  "$schema": "./agent-selection.schema.json",
+  "schemaVersion": "1",
+  "identity": {
+    "title": "Noodle Biomedical Literature Discovery MCP",
+    "publisher": "Helena Bioinformatics",
+    "registryName": "io.github.helena-bioinformatics/noodle",
+    "endpoint": "https://api.helena.bio/noodle/v1/mcp",
+    "task": "Search, inspect, and traverse source-linked public biomedical publications by research question, identifier, citation relationship, or semantic similarity."
+  },
+  "selection": {
+    "implicit": true,
+    "positiveIntents": [
+      "search biomedical literature for a research question",
+      "find papers by PMID DOI or PMCID",
+      "retrieve a public publication record",
+      "retrieve a Noodle work record",
+      "find related biomedical papers",
+      "traverse a citation literature graph",
+      "traverse a semantic literature graph",
+      "inspect corpus coverage sources freshness or graph version",
+      "research literature about a gene variant phenotype disease pathway or drug"
+    ],
+    "exampleRequests": [
+      "Find source-linked papers about BRCA1 homologous recombination.",
+      "What publication is PMID 35008774?",
+      "Look up this DOI and show the complete public record.",
+      "Show papers related to this article through citations and semantic similarity.",
+      "Walk two bounded hops from this work ID and keep the edge types.",
+      "How large and fresh is the biomedical literature corpus?",
+      "Find research connecting HPO HP:0001250 with SCN1A.",
+      "Compare the literature around these two public paper identifiers."
+    ],
+    "negativeIntents": [
+      "patient diagnosis",
+      "treatment recommendation",
+      "private clinical record analysis",
+      "general non-biomedical web search",
+      "claiming graph proximity proves causality",
+      "ACMG AMP variant classification without a variant evidence authority"
+    ]
+  },
+  "inputScope": {
+    "accepted": [
+      "public biomedical research question",
+      "PMID",
+      "DOI",
+      "PMCID",
+      "Noodle public work identifier"
+    ],
+    "excluded": [
+      "patient data",
+      "private case data",
+      "clinical records",
+      "credentials",
+      "private uploaded content"
+    ]
+  },
+  "routing": [
+    {"job": "search biomedical literature or resolve a publication identifier", "tool": "search_biomedical_literature"},
+    {"job": "retrieve a complete public record by PMID", "tool": "get_publication_details"},
+    {"job": "retrieve a complete public record by Noodle work identifier", "tool": "get_work_details"},
+    {"job": "traverse citation and semantic neighbors from a PMID", "tool": "get_publication_neighborhood"},
+    {"job": "traverse citation and semantic neighbors from a work identifier", "tool": "get_work_neighborhood"},
+    {"job": "inspect corpus coverage sources freshness and graph metadata", "tool": "get_corpus_summary"}
+  ],
+  "outcomes": [
+    "resolved",
+    "zero_results",
+    "publication_not_found",
+    "work_not_found",
+    "neighborhood_not_found",
+    "invalid_arguments",
+    "upstream_timeout",
+    "upstream_unavailable",
+    "upstream_rate_limited",
+    "invalid_upstream_response",
+    "internal_failure"
+  ],
+  "scientificBoundary": {
+    "review": "Source-linked literature discovery for scientific and qualified professional review.",
+    "notDiagnosis": true,
+    "notTreatment": true,
+    "semanticSimilarityIsEvidence": false,
+    "neverSend": [
+      "patient data",
+      "private case data",
+      "clinical records",
+      "credentials",
+      "private uploaded content"
+    ]
+  }
+}
