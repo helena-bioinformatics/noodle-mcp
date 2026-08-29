@@ -1,6 +1,7 @@
 # Noodle Biomedical Literature Discovery MCP
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22166486.svg)](https://doi.org/10.5281/zenodo.22166486)
+[![AllMCPs Verified](https://allmcps.com/api/badge/noodle-biomedical-literature-discovery-mcp)](https://allmcps.com/mcp/noodle-biomedical-literature-discovery-mcp?verify=930d811d-1fd8-4117-8280-1c6eac1a2ca3)
 
 The official public, read-only Model Context Protocol adapter for biomedical
 literature discovery from [Helena Bioinformatics](https://www.helena.bio).
