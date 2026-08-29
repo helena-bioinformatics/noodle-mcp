@@ -67,5 +67,17 @@
     "Docker MCP Registry",
     "MCP Central",
     "PulseMCP"
-  ]
+  ],
+  "surfaces": {
+    "officialRegistry": "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.helena-bioinformatics%2Fnoodle&version=latest",
+    "glamaConnector": "https://glama.ai/mcp/connectors/io.github.helena-bioinformatics/noodle",
+    "glamaRepository": "https://glama.ai/api/mcp/v1/servers/helena-bioinformatics/noodle-mcp",
+    "mcpBeat": "https://mcpbeat.com/mcp-servers/helena-bioinformatics/noodle-mcp/",
+    "mcpServersOrg": "https://mcpservers.org/servers/noodle-helena-bio"
+  },
+  "slo": {
+    "canonicalExactMatch": true,
+    "automaticAggregatorRefreshHours": 24,
+    "editorialFollowUpHours": 24
+  }
 }
