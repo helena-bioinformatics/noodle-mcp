@@ -3,10 +3,11 @@
 This directory is the canonical distribution package for
 `Noodle Biomedical Literature Discovery MCP` (`io.github.helena-bioinformatics/noodle`).
 Version `0.2.0` is the coordinated task-first discovery release. The endpoint,
-domain Server Card, signed Registry publication, and canonical discovery pages
-are active and observed in sync. The public adapter repository remains blocked
-until the canonical organization grants repository-creation permission.
-Directory listings remain unclaimed until separately observed.
+domain Server Card, signed Registry publication, canonical discovery pages, and
+public adapter repository are active and observed in sync. The public repository
+publishes signed `noodle-mcp-v0.2.0` and `noodle-biorouter-v0.2.0` releases.
+Directory submissions and merged listings remain distinct and are claimed only
+with durable public evidence.
 
 The canonical endpoint is `https://api.helena.bio/noodle/v1/mcp`.
 The server uses stateless Streamable HTTP, MCP `2026-07-28`, no authentication,

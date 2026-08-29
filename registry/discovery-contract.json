@@ -73,7 +73,9 @@
     "glamaConnector": "https://glama.ai/mcp/connectors/io.github.helena-bioinformatics/noodle",
     "glamaRepository": "https://glama.ai/api/mcp/v1/servers/helena-bioinformatics/noodle-mcp",
     "mcpBeat": "https://mcpbeat.com/mcp-servers/helena-bioinformatics/noodle-mcp/",
-    "mcpServersOrg": "https://mcpservers.org/servers/noodle-helena-bio"
+    "mcpServersOrg": "https://mcpservers.org/servers/noodle-helena-bio",
+    "mcpSoSubmission": "https://api.github.com/repos/chatmcp/mcpso/issues/3830",
+    "awesomeMcpServers": "https://api.github.com/repos/punkpeye/awesome-mcp-servers/pulls/13177"
   },
   "slo": {
     "canonicalExactMatch": true,
