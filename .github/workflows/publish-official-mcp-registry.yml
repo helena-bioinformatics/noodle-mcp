@@ -43,13 +43,61 @@ jobs:
           chmod 0755 "${publisher_dir}/mcp-publisher"
           "${publisher_dir}/mcp-publisher" validate
 
+      - name: Detect an already-published identical immutable version
+        id: registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          registry_url='https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.helena-bioinformatics%2Fnoodle&version=latest'
+          export REGISTRY_JSON="${RUNNER_TEMP}/registry.json"
+          curl --fail --silent --show-error --location \
+            --output "${REGISTRY_JSON}" "${registry_url}"
+          if python3 - <<'PY'
+          import json
+          import os
+
+          declared = json.load(open("server.json", encoding="utf-8"))
+          observed = json.load(open(os.environ["REGISTRY_JSON"], encoding="utf-8"))
+          records = observed.get("servers", [])
+          if len(records) != 1:
+              raise SystemExit(1)
+          record = records[0]
+          server = record.get("server", {})
+          official = record.get("_meta", {}).get(
+              "io.modelcontextprotocol.registry/official", {}
+          )
+          expected = {
+              "name": declared["name"],
+              "title": declared["title"],
+              "version": declared["version"],
+              "description": declared["description"],
+              "remote": declared["remotes"][0]["url"],
+          }
+          actual = {
+              "name": server.get("name"),
+              "title": server.get("title"),
+              "version": server.get("version"),
+              "description": server.get("description"),
+              "remote": (server.get("remotes") or [{}])[0].get("url"),
+          }
+          if actual != expected or official.get("status") != "active" or not official.get("isLatest"):
+              raise SystemExit(1)
+          PY
+          then
+            echo 'already_published=true' >> "${GITHUB_OUTPUT}"
+          else
+            echo 'already_published=false' >> "${GITHUB_OUTPUT}"
+          fi
+
       - name: Authenticate with short-lived GitHub OIDC
+        if: steps.registry.outputs.already_published != 'true'
         shell: bash
         run: >-
           "${RUNNER_TEMP}/mcp-publisher/mcp-publisher" login github-oidc
           --registry https://registry.modelcontextprotocol.io
 
       - name: Publish the immutable version
+        if: steps.registry.outputs.already_published != 'true'
         shell: bash
         run: |
           "${RUNNER_TEMP}/mcp-publisher/mcp-publisher" publish
