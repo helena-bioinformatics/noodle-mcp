@@ -1,5 +1,7 @@
 # Noodle Biomedical Literature Discovery MCP
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22166486.svg)](https://doi.org/10.5281/zenodo.22166486)
+
 The official public, read-only Model Context Protocol adapter for biomedical
 literature discovery from [Helena Bioinformatics](https://www.helena.bio).
 Agents can select it from a user task even when the user does not know the
@@ -87,6 +89,8 @@ It covers all six scientific routes plus negative and safety controls.
 - Client integrations: https://noodle.helena.bio/integrations
 - Server Card: https://noodle.helena.bio/.well-known/mcp/server-card.json
 - Official Registry: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.helena-bioinformatics%2Fnoodle
+- Citable release: https://doi.org/10.5281/zenodo.22166486
+- Software Heritage archive request: https://archive.softwareheritage.org/api/1/origin/save/2457442/
 - Methodology: https://noodle.helena.bio/methodology
 
 ## License and security

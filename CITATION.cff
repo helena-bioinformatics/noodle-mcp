@@ -9,6 +9,7 @@ authors:
     website: https://www.helena.bio
 version: 0.2.0
 date-released: 2026-08-29
+doi: 10.5281/zenodo.22166486
 url: https://noodle.helena.bio/mcp
 repository-code: https://github.com/helena-bioinformatics/noodle-mcp
 license: Apache-2.0
