@@ -73,6 +73,24 @@ def test_goose_recipe_is_direct_remote_and_task_first() -> None:
     assert "npx" not in goose["deeplink"]
 
 
+def test_training_tutorial_covers_search_graph_and_safety() -> None:
+    tutorial = (
+        ROOT
+        / "docs/tutorials/biomedical-literature-discovery-and-graph-traversal.md"
+    ).read_text(encoding="ascii")
+
+    assert "Estimated time:" in tutorial
+    assert "Learning objectives" in tutorial
+    assert "search_biomedical_literature" in tutorial
+    assert "get_publication_details" in tutorial
+    assert "get_publication_neighborhood" in tutorial
+    assert "get_work_neighborhood" in tutorial
+    assert "get_corpus_summary" in tutorial
+    assert "https://noodle.helena.bio" in tutorial
+    assert "https://api.helena.bio/noodle/v1/mcp" in tutorial
+    assert "Do not submit patient records" in tutorial
+
+
 def test_all_distribution_files_are_ascii_and_have_no_secret_markers() -> None:
     for path in (ROOT / "registry").rglob("*"):
         if not path.is_file():

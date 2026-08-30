@@ -98,6 +98,7 @@ Support: https://noodle.helena.bio/contact or `contact@helena.bio`
 
 ## Public resources
 
+- Hands-on tutorial: https://github.com/helena-bioinformatics/noodle-mcp/blob/main/docs/tutorials/biomedical-literature-discovery-and-graph-traversal.md
 - Connector and agent-selection guide: https://noodle.helena.bio/mcp
 - Client integrations: https://noodle.helena.bio/integrations
 - Server Card: https://noodle.helena.bio/.well-known/mcp/server-card.json
