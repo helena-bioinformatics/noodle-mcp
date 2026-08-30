@@ -2,7 +2,7 @@
   "name": "noodle-biomedical-literature-discovery-mcp",
   "display_name": "Noodle Biomedical Literature Discovery MCP",
   "description": "Helena Bioinformatics read-only biomedical literature search, publication records, and bounded citation or semantic graph traversal.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "entry_point": "noodle-biomedical-literature-discovery-mcp",
   "repository": "https://github.com/helena-bioinformatics/noodle-mcp/tree/main/integrations/biorouter",
   "license": "Apache-2.0",

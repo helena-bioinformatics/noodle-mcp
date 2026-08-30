@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: Noodle Biomedical Literature Discovery MCP
   description: Read-only search and graph exploration over public biomedical literature.
-  version: 0.2.0
+  version: 0.2.1
 host: api.helena.bio
 basePath: /noodle/v1
 schemes: [https]

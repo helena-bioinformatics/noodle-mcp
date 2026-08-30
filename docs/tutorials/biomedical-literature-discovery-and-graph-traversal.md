@@ -5,7 +5,7 @@
 **Estimated time:** 25 minutes  
 **Audience:** biomedical researchers, bioinformaticians, research-software users, and agent developers  
 **Material version:** 1.0  
-**Noodle release:** 0.2.0  
+**Noodle release:** 0.2.1  
 **Licence:** Apache-2.0
 
 Noodle Biomedical Literature Discovery is a public, read-only research tool

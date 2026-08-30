@@ -18,7 +18,12 @@ def test_active_distribution_identity_is_exact() -> None:
         == contract["registryName"]
         == "io.github.helena-bioinformatics/noodle"
     )
-    assert server["version"] == contract["version"] == "0.2.0"
+    assert server["version"] == contract["version"] == "0.2.1"
+    assert server["repository"] == {
+        "url": "https://github.com/helena-bioinformatics/noodle-mcp",
+        "source": "github",
+        "id": "1350901429",
+    }
     assert server["remotes"][0]["url"] == contract["endpoint"]
     assert package["mcpServers"]["noodle"]["url"] == contract["endpoint"]
 
@@ -50,8 +55,9 @@ def test_agent_plugin_and_kiro_power_preserve_canonical_identity() -> None:
     assert power["$schema"] == (
         "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json"
     )
-    assert power["mcpServers"]["noodle-biomedical-literature"]["url"] == (
-        contract["endpoint"]
+    assert (
+        power["mcpServers"]["noodle-biomedical-literature"]["url"]
+        == (contract["endpoint"])
     )
 
 
@@ -75,8 +81,7 @@ def test_goose_recipe_is_direct_remote_and_task_first() -> None:
 
 def test_training_tutorial_covers_search_graph_and_safety() -> None:
     tutorial = (
-        ROOT
-        / "docs/tutorials/biomedical-literature-discovery-and-graph-traversal.md"
+        ROOT / "docs/tutorials/biomedical-literature-discovery-and-graph-traversal.md"
     ).read_text(encoding="ascii")
 
     assert "Estimated time:" in tutorial

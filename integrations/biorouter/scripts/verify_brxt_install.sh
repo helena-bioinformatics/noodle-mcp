@@ -20,7 +20,7 @@ import json
 from noodle_biorouter import __version__
 from noodle_biorouter.server import ENDPOINT, SERVER_NAME
 
-assert __version__ == "0.2.0"
+assert __version__ == "0.2.1"
 assert SERVER_NAME == "Noodle Biomedical Literature Discovery MCP"
 assert ENDPOINT == "https://api.helena.bio/noodle/v1/mcp"
 print(json.dumps({"installed": True, "version": __version__, "server": SERVER_NAME}))

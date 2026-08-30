@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "noodle-biomedical-literature-discovery-mcp-biorouter"
-version = "0.2.0"
+version = "0.2.1"
 description = "Biorouter stdio bridge for Noodle Biomedical Literature Discovery MCP by Helena Bioinformatics"
 readme = "README.md"
 license = {text = "Apache-2.0"}

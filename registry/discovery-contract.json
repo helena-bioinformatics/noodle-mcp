@@ -6,7 +6,7 @@
   "description": "Search biomedical papers, inspect publication records, and traverse citation or semantic graphs.",
   "serverCardDescription": "Search biomedical papers, inspect publication records, and traverse citation or semantic graphs.",
   "publisher": "Helena Bioinformatics",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "protocolVersion": "2026-07-28",
   "endpoint": "https://api.helena.bio/noodle/v1/mcp",
   "health": "https://api.helena.bio/noodle/v1/health",
