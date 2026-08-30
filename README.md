@@ -84,6 +84,18 @@ python benchmarks/agent-discovery/audit_skill.py
 The benchmark contains 60 prompts that omit `Noodle`, `Helena`, and `MCP`.
 It covers all six scientific routes plus negative and safety controls.
 
+## Agent Plugin and Kiro Power
+
+This repository is also a portable Agent Plugin and Kiro Power. `plugin.json`
+provides brand-blind activation keywords, the existing Agent Skill supplies the
+scientific routing and safety boundary, and `mcp.json` connects directly to the
+canonical hosted Streamable HTTP endpoint. The Power does not proxy, repackage,
+or reimplement Noodle.
+
+Privacy policy: https://noodle.helena.bio/privacy
+
+Support: https://noodle.helena.bio/contact or `contact@helena.bio`
+
 ## Public resources
 
 - Connector and agent-selection guide: https://noodle.helena.bio/mcp

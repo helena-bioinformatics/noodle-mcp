@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "noodle-biomedical-literature-discovery",
+  "version": "0.2.0",
+  "description": "Find, inspect, compare, and traverse public biomedical research literature by topic, PMID, DOI, PMCID, citation links, and semantic neighborhoods with source-linked provenance.",
+  "author": {
+    "name": "Helena Bioinformatics",
+    "email": "contact@helena.bio",
+    "url": "https://www.helena.bio"
+  },
+  "keywords": [
+    "biomedical literature",
+    "research papers",
+    "PubMed",
+    "PMID",
+    "DOI",
+    "PMCID",
+    "related papers",
+    "citation graph",
+    "semantic search",
+    "literature review",
+    "bioinformatics",
+    "gene",
+    "variant",
+    "phenotype",
+    "disease",
+    "drug"
+  ],
+  "homepage": "https://noodle.helena.bio/mcp",
+  "repository": "https://github.com/helena-bioinformatics/noodle-mcp",
+  "license": "Apache-2.0"
+}

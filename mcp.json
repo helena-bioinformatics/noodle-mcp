@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "noodle-biomedical-literature": {
+      "url": "https://api.helena.bio/noodle/v1/mcp",
+      "disabled": false
+    }
+  }
+}
