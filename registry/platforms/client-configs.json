@@ -18,6 +18,12 @@
     "vscode": {"servers": {"noodle": {"type": "http", "url": "https://api.helena.bio/noodle/v1/mcp"}}},
     "cursor": {"mcpServers": {"noodle": {"url": "https://api.helena.bio/noodle/v1/mcp"}}},
     "windsurf": {"mcpServers": {"noodle": {"serverUrl": "https://api.helena.bio/noodle/v1/mcp"}}},
+    "goose": {
+      "type": "streamable_http",
+      "uri": "https://api.helena.bio/noodle/v1/mcp",
+      "timeout": 300,
+      "deeplink": "goose://extension?type=streamable_http&url=https%3A%2F%2Fapi.helena.bio%2Fnoodle%2Fv1%2Fmcp&timeout=300&id=noodle-biomedical-literature&name=Noodle%20Biomedical%20Literature%20Discovery&description=Search%20and%20traverse%20public%20biomedical%20literature%20by%20topic%2C%20PMID%2C%20DOI%2C%20PMCID%2C%20citations%2C%20and%20semantic%20neighborhoods"
+    },
     "biomni": {"mode": "stdio proxy recipe", "definition": "../../integrations/biomni/mcp_config.yaml", "url": "https://api.helena.bio/noodle/v1/mcp"},
     "biorouter": {"mode": "reproducible brxt extension", "definition": "../../integrations/biorouter/manifest.json", "url": "https://api.helena.bio/noodle/v1/mcp"}
   }

@@ -55,6 +55,24 @@ def test_agent_plugin_and_kiro_power_preserve_canonical_identity() -> None:
     )
 
 
+def test_goose_recipe_is_direct_remote_and_task_first() -> None:
+    contract = json.loads(
+        (ROOT / "registry/discovery-contract.json").read_text(encoding="ascii")
+    )
+    clients = json.loads(
+        (ROOT / "registry/platforms/client-configs.json").read_text(encoding="ascii")
+    )
+    goose = clients["clients"]["goose"]
+
+    assert goose["type"] == "streamable_http"
+    assert goose["uri"] == contract["endpoint"]
+    assert goose["timeout"] == 300
+    assert goose["deeplink"].startswith("goose://extension?")
+    assert "type=streamable_http" in goose["deeplink"]
+    assert "Noodle%20Biomedical%20Literature%20Discovery" in goose["deeplink"]
+    assert "npx" not in goose["deeplink"]
+
+
 def test_all_distribution_files_are_ascii_and_have_no_secret_markers() -> None:
     for path in (ROOT / "registry").rglob("*"):
         if not path.is_file():
