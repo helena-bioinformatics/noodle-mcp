@@ -1,0 +1,22 @@
+identity:
+  name: get_publication_neighborhood
+  author: helena-bioinformatics
+  label:
+    en_US: Explore publication neighborhood
+description:
+  human:
+    en_US: Traverse the bounded citation or semantic neighborhood of a PMID.
+  llm: Retrieve the bounded related-publication neighborhood for a PMID. Graph proximity is a discovery signal, not evidence of causality.
+parameters:
+  - name: pmid
+    type: string
+    required: true
+    label:
+      en_US: PMID
+    human_description:
+      en_US: Anchor PubMed identifier.
+    llm_description: Anchor PubMed identifier as digits only.
+    form: llm
+extra:
+  python:
+    source: tools/get_publication_neighborhood.py

@@ -1,0 +1,22 @@
+identity:
+  name: get_publication_details
+  author: helena-bioinformatics
+  label:
+    en_US: Get publication details
+description:
+  human:
+    en_US: Retrieve one public bibliographic record by PMID.
+  llm: Retrieve the complete public record for one PMID after search.
+parameters:
+  - name: pmid
+    type: string
+    required: true
+    label:
+      en_US: PMID
+    human_description:
+      en_US: PubMed identifier as digits only.
+    llm_description: PubMed identifier as 1 to 12 digits without a prefix.
+    form: llm
+extra:
+  python:
+    source: tools/get_publication_details.py

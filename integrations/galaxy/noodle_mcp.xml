@@ -1,0 +1,41 @@
+<tool id="noodle_biomedical_literature" name="Noodle Biomedical Literature Discovery" version="0.1.0+galaxy0" profile="24.0">
+  <description>search public biomedical papers through the Noodle MCP</description>
+  <requirements />
+  <command detect_errors="exit_code"><![CDATA[
+python '$__tool_directory__/noodle_mcp.py'
+--query '$query'
+--limit '$limit'
+--sort '$sort'
+--output '$output'
+  ]]></command>
+  <inputs>
+    <param name="query" type="text" label="Biomedical question or identifier" help="Natural language, PMID, DOI, PMCID, gene, variant, phenotype, HPO, or OMIM query." />
+    <param name="limit" type="integer" value="10" min="1" max="25" label="Maximum results" />
+    <param name="sort" type="select" label="Result order">
+      <option value="relevance" selected="true">Relevance</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </param>
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Noodle literature results" />
+  </outputs>
+  <tests>
+    <test expect_num_outputs="1">
+      <param name="query" value="BRCA1 homologous recombination" />
+      <param name="limit" value="3" />
+      <param name="sort" value="relevance" />
+      <output name="output">
+        <assert_contents><has_text text="contract_version" /><has_text text="results" /></assert_contents>
+      </output>
+    </test>
+  </tests>
+  <help><![CDATA[
+Searches the public PubMed-derived Noodle corpus. Exact identifiers can anchor
+semantic discovery. Citation or semantic proximity is a discovery signal, not
+causality, diagnosis, or treatment advice. Do not submit patient or private data.
+
+Documentation: https://noodle.helena.bio/mcp
+  ]]></help>
+  <citations><citation type="doi">10.5281/zenodo.22166485</citation></citations>
+</tool>

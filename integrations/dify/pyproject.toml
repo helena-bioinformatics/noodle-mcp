@@ -1,0 +1,10 @@
+[project]
+name = "dify-noodle-biomedical-literature"
+version = "0.1.0"
+description = "Noodle Biomedical Literature Discovery tools for Dify"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["dify_plugin>=0.9.0"]
+
+[dependency-groups]
+dev = []

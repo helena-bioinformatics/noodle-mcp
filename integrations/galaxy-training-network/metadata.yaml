@@ -1,0 +1,26 @@
+name: variant-to-literature-with-helena
+type: use
+title: From a germline variant to its literature neighborhood with Folklore and Noodle
+summary: Use public Helena Bioinformatics services to retrieve bounded variant evidence and discover connected biomedical publications.
+requirements:
+  - type: internal
+    topic_name: variant-analysis
+    tutorials:
+      - introduction
+edam_ontology:
+  - topic_0199
+  - operation_3227
+questions:
+  - How can a variant be normalized before literature discovery?
+  - How can related publications be explored without treating graph proximity as causal evidence?
+objectives:
+  - Retrieve structured Folklore evidence for a supported GRCh38 germline variant.
+  - Search Noodle's public biomedical literature corpus.
+  - Explain the professional-review and non-causality boundaries of both outputs.
+time_estimation: 45M
+key_points:
+  - Folklore results require professional review and do not evaluate patient context.
+  - Noodle citation and semantic neighborhoods are discovery signals, not causal evidence.
+  - Patient, private case, and credential data must never be submitted.
+contributors:
+  - helena-bioinformatics

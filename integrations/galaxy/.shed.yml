@@ -1,0 +1,10 @@
+name: noodle_biomedical_literature
+owner: helena_bioinformatics
+description: Search public biomedical literature through Noodle MCP.
+long_description: Public, read-only biomedical paper search and discovery from Helena Bioinformatics.
+categories:
+  - Text Manipulation
+  - Web Services
+remote_repository_url: https://github.com/helena-bioinformatics/noodle-mcp
+homepage_url: https://noodle.helena.bio
+type: unrestricted

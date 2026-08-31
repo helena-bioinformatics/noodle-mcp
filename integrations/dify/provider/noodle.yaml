@@ -1,0 +1,18 @@
+identity:
+  author: helena-bioinformatics
+  name: noodle_biomedical_literature
+  label:
+    en_US: Noodle Biomedical Literature Discovery
+  description:
+    en_US: Public, read-only biomedical literature discovery from Helena Bioinformatics.
+  icon: icon.svg
+  tags:
+    - search
+credentials_for_provider: {}
+tools:
+  - tools/search_biomedical_literature.yaml
+  - tools/get_publication_details.yaml
+  - tools/get_publication_neighborhood.yaml
+extra:
+  python:
+    source: provider/noodle.py

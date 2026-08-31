@@ -1,0 +1,30 @@
+version: 0.1.0
+type: plugin
+tags:
+  - search
+  - productivity
+author: helena-bioinformatics
+name: noodle_biomedical_literature
+label:
+  en_US: Noodle Biomedical Literature Discovery
+created_at: "2026-08-31T00:00:00Z"
+description:
+  en_US: Search public biomedical literature, inspect publications, and traverse bounded citation or semantic neighborhoods with Noodle.
+icon: icon.svg
+resource:
+  memory: 67108864
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/noodle.yaml
+meta:
+  version: 0.0.2
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main

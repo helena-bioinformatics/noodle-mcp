@@ -1,0 +1,52 @@
+identity:
+  name: search_biomedical_literature
+  author: helena-bioinformatics
+  label:
+    en_US: Search biomedical literature
+description:
+  human:
+    en_US: Search Noodle's public PubMed-derived biomedical corpus.
+  llm: Search public biomedical papers by question, PMID, DOI, PMCID, gene, variant, phenotype, HPO, or OMIM identifier. Results support discovery and professional review, not diagnosis or treatment.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query
+    human_description:
+      en_US: Biomedical question or identifier.
+    llm_description: Natural-language biomedical question or exact publication, gene, variant, or phenotype identifier.
+    form: llm
+  - name: limit
+    type: number
+    required: false
+    default: 10
+    label:
+      en_US: Limit
+    human_description:
+      en_US: Maximum results, 1 to 25.
+    llm_description: Maximum number of results from 1 to 25.
+    form: llm
+  - name: sort
+    type: select
+    required: false
+    default: relevance
+    options:
+      - value: relevance
+        label:
+          en_US: Relevance
+      - value: newest
+        label:
+          en_US: Newest
+      - value: oldest
+        label:
+          en_US: Oldest
+    label:
+      en_US: Sort
+    human_description:
+      en_US: Result order.
+    llm_description: Use relevance unless the user explicitly requests chronological order.
+    form: llm
+extra:
+  python:
+    source: tools/search_biomedical_literature.py

@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22166486.svg)](https://doi.org/10.5281/zenodo.22166486)
 [![AllMCPs Verified](https://allmcps.com/api/badge/noodle-biomedical-literature-discovery-mcp)](https://allmcps.com/mcp/noodle-biomedical-literature-discovery-mcp?verify=930d811d-1fd8-4117-8280-1c6eac1a2ca3)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/helena-bioinformatics/noodle-mcp/badge)](https://scorecard.dev/viewer/?uri=github.com/helena-bioinformatics/noodle-mcp)
 
 The official public, read-only Model Context Protocol adapter for biomedical
 literature discovery from [Helena Bioinformatics](https://www.helena.bio).
@@ -36,6 +37,16 @@ Any MCP client that supports remote Streamable HTTP can use the endpoint. Exact
 recipes for ChatGPT, Claude, Codex, VS Code, Cursor, Windsurf, Gemini CLI,
 Grok, Perplexity, Microsoft Copilot Studio, Biomni, and Biorouter live under
 `registry/platforms` and `integrations`.
+
+Ready-to-use ecosystem packages are included for:
+
+- [Dify](integrations/dify/README.md), including a reproducible `.difypkg`;
+- [n8n](integrations/n8n/README.md), using the exact stateless MCP JSON-RPC
+  contract supported by the hosted service;
+- [Galaxy](integrations/galaxy/README.md), with a Planemo-linted ToolShed
+  wrapper; and
+- the companion [Galaxy Training Network tutorial](integrations/galaxy-training-network/README.md)
+  for a Folklore-to-Noodle literature workflow.
 
 The companion Agent Skill is in
 `skills/noodle-biomedical-literature-discovery`. It enables implicit,

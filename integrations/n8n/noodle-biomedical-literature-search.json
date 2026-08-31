@@ -1,0 +1,61 @@
+{
+  "name": "Search biomedical literature with Noodle MCP",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1111111-1111-4111-8111-111111111111",
+      "name": "Run workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {"id": "q1", "name": "query", "value": "BRCA1 homologous recombination", "type": "string"},
+            {"id": "q2", "name": "limit", "value": 10, "type": "number"}
+          ]
+        },
+        "options": {}
+      },
+      "id": "a2222222-2222-4222-8222-222222222222",
+      "name": "Biomedical question",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.helena.bio/noodle/v1/mcp",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "Accept", "value": "application/json"},
+          {"name": "Content-Type", "value": "application/json"},
+          {"name": "MCP-Protocol-Version", "value": "2026-07-28"},
+          {"name": "Mcp-Method", "value": "tools/call"},
+          {"name": "Mcp-Name", "value": "search_biomedical_literature"}
+        ]},
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({jsonrpc: '2.0', id: 1, method: 'tools/call', params: {name: 'search_biomedical_literature', arguments: {query: $json.query, limit: $json.limit, sort: 'relevance'}, _meta: {'io.modelcontextprotocol/protocolVersion': '2026-07-28', 'io.modelcontextprotocol/clientCapabilities': {}}}}) }}",
+        "options": {"timeout": 60000}
+      },
+      "id": "a3333333-3333-4333-8333-333333333333",
+      "name": "Noodle MCP search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 0]
+    }
+  ],
+  "connections": {
+    "Run workflow": {"main": [[{"node": "Biomedical question", "type": "main", "index": 0}]]},
+    "Biomedical question": {"main": [[{"node": "Noodle MCP search", "type": "main", "index": 0}]]}
+  },
+  "pinData": {},
+  "settings": {"executionOrder": "v1"},
+  "meta": {"templateCredsSetupCompleted": true},
+  "tags": []
+}
