@@ -13,3 +13,16 @@ or private data and does not provide diagnosis or treatment advice.
 
 No credentials are required. Install the plugin and add its tools to a Dify
 agent or workflow.
+
+## Install
+
+Download `dist/noodle-biomedical-literature-0.1.0.difypkg` and its `.sha256`
+sidecar. Verify the archive, then in Dify open **Plugins**, choose **Install
+plugin from local file**, and select the `.difypkg` file.
+
+Rebuild reproducibly with Dify CLI `0.6.10`:
+
+```bash
+dify plugin package integrations/dify \
+  -o noodle-biomedical-literature-0.1.0.difypkg
+```
