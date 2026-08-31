@@ -47,6 +47,8 @@ Ready-to-use ecosystem packages are included for:
   wrapper; and
 - [KNIME Analytics Platform](integrations/knime/README.md), with a table-to-MCP
   Python Script node and prepared Hub listing; and
+- [Google Colab and Kaggle notebooks](integrations/notebooks/README.md), plus a
+  [Cytoscape GraphML workflow](integrations/cytoscape/README.md); and
 - the companion [Galaxy Training Network tutorial](integrations/galaxy-training-network/README.md)
   for a Folklore-to-Noodle literature workflow.
 
