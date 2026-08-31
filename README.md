@@ -45,6 +45,8 @@ Ready-to-use ecosystem packages are included for:
   contract supported by the hosted service;
 - [Galaxy](integrations/galaxy/README.md), with a Planemo-linted ToolShed
   wrapper; and
+- [KNIME Analytics Platform](integrations/knime/README.md), with a table-to-MCP
+  Python Script node and prepared Hub listing; and
 - the companion [Galaxy Training Network tutorial](integrations/galaxy-training-network/README.md)
   for a Folklore-to-Noodle literature workflow.
 
