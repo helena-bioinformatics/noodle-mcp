@@ -44,7 +44,11 @@ def call_tool(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
     result = document.get("result", {})
     if result.get("isError"):
         content = result.get("content") or []
-        message = content[0].get("text") if content and isinstance(content[0], dict) else "Noodle tool error"
+        message = (
+            content[0].get("text")
+            if content and isinstance(content[0], dict)
+            else "Noodle tool error"
+        )
         raise RuntimeError(message)
     structured = result.get("structuredContent")
     return structured if isinstance(structured, dict) else result

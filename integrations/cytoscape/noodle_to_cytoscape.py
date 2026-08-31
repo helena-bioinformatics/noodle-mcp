@@ -76,7 +76,9 @@ def to_graphml(neighborhood: dict) -> ET.ElementTree:
             id=key_id,
             **{"for": target, "attr.name": name, "attr.type": "string"},
         )
-    graph = ET.SubElement(root, f"{{{GRAPHML}}}graph", id="noodle", edgedefault="directed")
+    graph = ET.SubElement(
+        root, f"{{{GRAPHML}}}graph", id="noodle", edgedefault="directed"
+    )
     add_data(graph, "graph_version", neighborhood.get("graph_version"))
     for item in neighborhood.get("nodes", []):
         node = ET.SubElement(graph, f"{{{GRAPHML}}}node", id=item["id"])
@@ -94,7 +96,9 @@ def to_graphml(neighborhood: dict) -> ET.ElementTree:
             target=item["target_id"],
         )
         reasons = item.get("reasons", [])
-        add_data(edge, "edge_reasons", "; ".join(str(r.get("kind", "")) for r in reasons))
+        add_data(
+            edge, "edge_reasons", "; ".join(str(r.get("kind", "")) for r in reasons)
+        )
         scores = [r.get("score") for r in reasons if r.get("score") is not None]
         add_data(edge, "edge_score", max(scores) if scores else "")
     return ET.ElementTree(root)

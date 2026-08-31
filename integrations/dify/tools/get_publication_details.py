@@ -8,6 +8,12 @@ from tools.mcp_client import call_tool
 
 
 class GetPublicationDetailsTool(Tool):
-    def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage, None, None]:
+    def _invoke(
+        self, tool_parameters: dict[str, Any]
+    ) -> Generator[ToolInvokeMessage, None, None]:
         pmid = str(tool_parameters.get("pmid", "")).strip()
-        yield self.create_text_message(json.dumps(call_tool("get_publication_details", {"pmid": pmid}), ensure_ascii=False))
+        yield self.create_text_message(
+            json.dumps(
+                call_tool("get_publication_details", {"pmid": pmid}), ensure_ascii=False
+            )
+        )
