@@ -12,6 +12,10 @@ date-released: 2026-08-30
 doi: 10.5281/zenodo.22166486
 url: https://noodle.helena.bio/mcp
 repository-code: https://github.com/helena-bioinformatics/noodle-mcp
+identifiers:
+  - type: other
+    value: RRID:SCR_028920
+    description: Research Resource Identifier for Noodle
 license: Apache-2.0
 keywords:
   - biomedical literature search

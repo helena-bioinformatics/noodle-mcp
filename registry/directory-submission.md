@@ -12,6 +12,8 @@ is not active until its durable listing URL is observed.
 - Icon: `https://noodle.helena.bio/favicon.svg`
 - Privacy: `https://www.helena.bio/privacy`
 - Terms: `https://www.helena.bio/terms`
+- Research Resource Identifier: `RRID:SCR_028920`
+- RRID record: `https://n2t.net/RRID:SCR_028920`
 
 Description: Search biomedical papers, inspect publication records, and traverse citation or semantic graphs.
 

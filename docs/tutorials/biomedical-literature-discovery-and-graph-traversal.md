@@ -146,6 +146,14 @@ information, do not send it to the public service.
 - [ ] I treated ranking and graph proximity as discovery signals only.
 - [ ] I did not submit private or patient data.
 
+## Citation
+
+The persistent Research Resource Identifier is
+[`RRID:SCR_028920`](https://n2t.net/RRID:SCR_028920). Cite the resource in a
+methods section as **Noodle (RRID:SCR_028920)**. Use the
+[version DOI](https://doi.org/10.5281/zenodo.22166486) for the archived 0.2.0
+software release when a version-specific citation is needed.
+
 ## Further resources
 
 - Methodology: <https://noodle.helena.bio/methodology>

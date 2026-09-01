@@ -96,6 +96,23 @@ def test_training_tutorial_covers_search_graph_and_safety() -> None:
     assert "Do not submit patient records" in tutorial
 
 
+def test_rrid_is_consistent_across_public_citation_surfaces() -> None:
+    rrid = "RRID:SCR_028920"
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    citation = (ROOT / "CITATION.cff").read_text(encoding="ascii")
+    directory = (ROOT / "registry/directory-submission.md").read_text(encoding="ascii")
+    tutorial = (
+        ROOT / "docs/tutorials/biomedical-literature-discovery-and-graph-traversal.md"
+    ).read_text(encoding="utf-8")
+
+    for surface in (readme, citation, directory, tutorial):
+        assert rrid in surface
+    for human_surface in (readme, tutorial):
+        assert f"Noodle ({rrid})" in human_surface
+    assert "https://n2t.net/RRID:SCR_028920" in readme
+    assert "value: RRID:SCR_028920" in citation
+
+
 def test_all_distribution_files_are_ascii_and_have_no_secret_markers() -> None:
     for path in (ROOT / "registry").rglob("*"):
         if not path.is_file():

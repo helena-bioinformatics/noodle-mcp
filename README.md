@@ -3,6 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22166486.svg)](https://doi.org/10.5281/zenodo.22166486)
 [![AllMCPs Verified](https://allmcps.com/api/badge/noodle-biomedical-literature-discovery-mcp)](https://allmcps.com/mcp/noodle-biomedical-literature-discovery-mcp?verify=930d811d-1fd8-4117-8280-1c6eac1a2ca3)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/helena-bioinformatics/noodle-mcp/badge)](https://scorecard.dev/viewer/?uri=github.com/helena-bioinformatics/noodle-mcp)
+[![RRID](https://img.shields.io/badge/RRID-SCR__028920-005A9C)](https://n2t.net/RRID:SCR_028920)
 
 The official public, read-only Model Context Protocol adapter for biomedical
 literature discovery from [Helena Bioinformatics](https://www.helena.bio).
@@ -108,6 +109,15 @@ canonical hosted Streamable HTTP endpoint. The Power does not proxy, repackage,
 or reimplement Noodle.
 
 Privacy policy: https://noodle.helena.bio/privacy
+
+## Cite Noodle
+
+The persistent Research Resource Identifier is
+[`RRID:SCR_028920`](https://n2t.net/RRID:SCR_028920). Cite the resource in a
+methods section as **Noodle (RRID:SCR_028920)**. Use the
+[version DOI](https://doi.org/10.5281/zenodo.22166486) when a version-specific
+software citation is also needed. The RRID identifies the resource across
+publications, while the DOI identifies the archived 0.2.0 release.
 
 Support: https://noodle.helena.bio/contact or `contact@helena.bio`
 
